@@ -1,28 +1,32 @@
-import csv
 import random
 from array import *
 
+
 def Menu():
-    print("D&D Sheet Builder\n 1 - Character creation\n 2 - Party Creation\n 3 - GM Viewer\n")
+    print("D&D Sheet Builder\n 1 - Character creation\n 2 - Party Creation\n 3 - GM Viewer\n 4 - Quit\n")
     index = int(input("Enter the value: "))
     if index == 1:
         CharacterCreation()
+    if index == 4:
+        quit()
     else:
         print("Incorrect answer. Try again")
         Menu()
 
+
 class Character:
-  def __init__(self, name, race,Class, level, strength, dexterity, constitution, wisdom, intelligence, charisma):
-    self.name = name
-    self.race = race
-    self.Class = Class
-    self.level = level
-    self.Strength = strength
-    self.Dexterity = dexterity
-    self.Constitution = constitution
-    self.Wisdom = wisdom
-    self.Intelligence = intelligence
-    self.Charisma = charisma
+
+    def __init__(self, name, race, Class, level, strength, dexterity, constitution, wisdom, intelligence, charisma):
+        self.name = name
+        self.race = race
+        self.Class = Class
+        self.level = level
+        self.Strength = strength
+        self.Dexterity = dexterity
+        self.Constitution = constitution
+        self.Wisdom = wisdom
+        self.Intelligence = intelligence
+        self.Charisma = charisma
 
 
 def raceTranslation():
@@ -41,7 +45,7 @@ def raceTranslation():
         temp_str2 = 2
         temp_dex2 = 0
         temp_const2 = 0
-        temp_wis2 = 0 
+        temp_wis2 = 0
         temp_intelli2 = 0
         temp_charisma2 = 1
 
@@ -58,7 +62,7 @@ def raceTranslation():
         race = "Elf"
         temp_str2 = 0
         temp_dex2 = 2
-        temp_const2 = 0 
+        temp_const2 = 0
         temp_wis2 = 0
         temp_intelli2 = 0
         temp_charisma2 = 0
@@ -129,12 +133,13 @@ def raceTranslation():
         temp_str2 = 0
         temp_dex2 = 0
         temp_const2 = 0
-        temp_wis2 = 0 
+        temp_wis2 = 0
         temp_intelli2 = 1
         temp_charisma2 = 2
 
     else:
         print("Something went wrong.")
+
 
 def classTranslation():
     global Class
@@ -166,6 +171,7 @@ def classTranslation():
     else:
         print("Something went wrong.")
 
+
 def rollDice():
     
     numArray = array ('i',[])
@@ -179,10 +185,16 @@ def rollDice():
     return highest_sum
 
 
+def saveChar():
+    file = open("characters.txt", "a")
+    save = str(char.name) + " , " + str(char.race) + " , " + str(char.Class) + " , " + str(char.level) + " , " + str(char.Strength) + " , " + str(char.Dexterity) + " , " + str(char.Constitution) + " , " + str(char.Wisdom) + " , " + str(char.Intelligence) + " , " + str(char.Charisma) + "\n"
+    file.write(save)
+
+
 def CharacterCreation():
     global temp_r
     global temp_c
-
+    global char
     global temp_str2
     global temp_dex2
     global temp_const2
@@ -194,7 +206,7 @@ def CharacterCreation():
     temp_r = int(input("\nChoose a race\n 1 - Dragonborn\n 2 - Dwarf\n 3 - Elf\n 4 - Gnome\n 5 - Half-Elf\n 6 - Halfling\n 7 - Half-Orc\n 8 - Human\n 9 - Tiefling\n Type your answer: "))
     temp_c = int(input("\nChoose a class\n 1 - Barbarian\n 2 - Bard\n 3 - Cleric\n 4 - Druid\n 5 - Fighter\n 6 - Monk\n 7 - Paladin\n 8 - Ranger\n 9 - Rogue\n 10 - Sorcerer\n 11 - Warlock\n 12 - Wizard\n Type your answer: "))
     lvl = int(input("Set the level: "))
-    
+
     raceTranslation()
 
     temp_strength = rollDice()
@@ -219,17 +231,10 @@ def CharacterCreation():
     print("temp_2 ", temp_intelligence, temp_intelli2)
     classTranslation()
 
-    char = Character(name,race,Class,lvl,strength,dexterity,constitution,wisdom,intelligence,charisma)
-    print(char.name)
-    print(char.race)
-    print(char.Class)
-    print(char.level)
-    print(char.Strength)
-    print(char.Dexterity)
-    print(char.Constitution)
-    print(char.Wisdom)
-    print(char.Intelligence)
-    print(char.Charisma)
+    char = Character(name, race, Class, lvl, strength, dexterity, constitution, wisdom, intelligence, charisma)
+
+    saveChar()
+
 
 Menu()
 
