@@ -3,6 +3,7 @@ from array import *
 import os
 
 cache = 0
+AnimalHandling = 0
 
 #This is the function defining the main menu
 def Menu():
@@ -19,7 +20,7 @@ def Menu():
 #This is the class defining the character template
 class Character:
 
-    def __init__(self, name, race, Class, level, strength, dexterity, constitution, wisdom, intelligence, charisma):
+    def __init__(self, name, race, Class, level, strength, dexterity, constitution, wisdom, intelligence, charisma, Athletics, Acrobatics, SleightOfHand, Stealth, Arcana, History, Investigation):
         self.name = name
         self.race = race
         self.Class = Class
@@ -30,8 +31,17 @@ class Character:
         self.Wisdom = wisdom
         self.Intelligence = intelligence
         self.Charisma = charisma
+        self.Athletics = Athletics
+        self.Acrobatics = Acrobatics
+        self.SleightOfHand = SleightOfHand
+        self.Stealth = Stealth
+        self.Arcana = Arcana
+        self.History = History
+        self.Investigation = Investigation
+
 
 #This is the function defines the different races and converts the user input to the race
+
 def raceTranslation():
     global race
     global temp_r
@@ -151,22 +161,30 @@ def classTranslation():
     global temp_c
     global cache
 
+    global AnimalHandling
+    global Athletics
+    global Intimidation
+
     if temp_c == 1:
         Class = "Barbarian"
+        print(AnimalHandling , " " , cache)
         for i in range(2):
             print("Because you've chosen Barbarian, you can increase 2 ability scores by 1.\n 1 for Animal Handling\n 2 for Athletics\n 3 for Intimidation\n 4 for Nature\n 5 for Perception\n 6 for Survival\n")
             option = int(input("Type your answer: "))
-            if option == 1:
+            if option == 0:
+                print("Option is 0")
+            elif option == 1:
                 AnimalHandling += cache
-            if option == 2:
-                athletics += cache
-            if option == 3:
+                print(AnimalHandling , " " , cache , " o: " , option)
+            elif option == 2:
+                Athletics += cache
+            elif option == 3:
                 Intimidation += cache
-            if option == 4:
+            elif option == 4:
                 Nature += cache
-            if option == 5:
+            elif option == 5:
                 Perception += cache
-            if option == 6:
+            elif option == 6:
                 Survival += cache
             else:
                 print("Error: Something went wrong")
@@ -251,19 +269,19 @@ def classTranslation():
             option = int(input("Type your answer: "))
             if option == 1:
                 Arcana += cache
-            if option == 2:
+            elif option == 2:
                 AnimalHandling += cache
-            if option == 3:
+            elif option == 3:
                 Insight += cache
-            if option == 4:
+            elif option == 4:
                 Medicine += cache
-            if option == 5:
+            elif option == 5:
                 Nature += cache
-            if option == 6:
+            elif option == 6:
                 Perception += cache
-            if option == 7:
+            elif option == 7:
                 Religion += cache
-            if option == 8:
+            elif option == 8:
                 Survival += cache
             else:
                 print("Error: Something went wrong")
@@ -285,6 +303,7 @@ def classTranslation():
         print("Something went wrong.")
 
 
+#This function generate a random number (would roll a dice) in order to get the ability scores
 def rollDice():
     
     numArray = array ('i',[])
@@ -297,102 +316,101 @@ def rollDice():
     highest_sum = numArray[1] + numArray[2] + numArray[3] 
     return highest_sum
 
-
+#This function would save the character in the characters.txt
 def saveChar():
     file = open("characters.txt", "a")
     save = str(char.name) + " , " + str(char.race) + " , " + str(char.Class) + " , " + str(char.level) + " , " + str(char.Strength) + " , " + str(char.Dexterity) + " , " + str(char.Constitution) + " , " + str(char.Wisdom) + " , " + str(char.Intelligence) + " , " + str(char.Charisma) + "\n"
     file.write(save)
 
-    
 
 def StrengthConversion():
     
     if strength == 1:
-        athletics = -5
+        Athletics = -5
 
     elif strength == 2 or strength == 3:
-        athletics = -4
+        Athletics = -4
 
     elif strength == 4 or strength == 5:
-        athletics = -3
+        Athletics = -3
 
     elif strength == 6 or strength == 7:
-        athletics = -2
+        Athletics = -2
 
     elif strength == 8 or strength == 9:
-        athletics = -1
+        Athletics = -1
 
     elif strength == 10 or strength == 11:
-        athletics = 0
+        Athletics = 0
 
     elif strength == 12 or strength == 13:
-        athletics = 1
+        Athletics = 1
 
     elif strength == 14 or strength == 15:
-        athletics = 2
+        Athletics = 2
 
     elif strength == 16 or strength == 17:
-        athletics = 3
+        Athletics = 3
 
     elif strength == 18 or strength == 19:
-        athletics = 4
+        Athletics = 4
 
     elif strength >= 20:
-         athletics = 5
+         Athletics = 5
 
 def DexterityConversion():
     if dexterity == 1:
-        acrobatics  = -5
+        Acrobatics  = -5
         SleightOfHand = -5
         Stealth = -5
 
     elif dexterity == 2 or dexterity == 3:
-        acrobatics = -4
+        Acrobatics = -4
         SleightOfHand = -4
         Stealth = -4
 
     elif dexterity == 4 or dexterity == 5:
-        acrobatics = -3
+        Acrobatics = -3
         SleightOfHand = -3
         Stealth = -3
 
     elif dexterity == 6 or dexterity == 7:
-        acrobatics = -2
+        Acrobatics = -2
         SleightOfHand = -2
         Stealth = -2
 
     elif dexterity == 8 or dexterity == 9:
-        acrobatics = -1
+        Acrobatics = -1
         SleightOfHand = -1
         Stealth = -1
 
     elif dexterity == 10 or dexterity == 11:
-        acrobatics = 0
+        Acrobatics = 0
         SleightOfHand = 0
         Stealth = 0
 
     elif dexterity == 12 or dexterity == 13:
-        acrobatics = 1
+        Acrobatics = 1
         SleightOfHand = 1
         Stealth = 1
 
     elif dexterity == 14 or dexterity == 15:
-        acrobatics = 2
+        Acrobatics = 2
         SleightOfHand = 2
         Stealth = 2
 
     elif dexterity == 16 or dexterity == 17:
-        acrobatics = 3
+        Acrobatics = 3
         SleightOfHand = 3
         Stealth = 3
 
     elif dexterity == 18 or dexterity == 19:
-        acrobatics = 4
+        Acrobatics = 4
         SleightOfHand = 4
         Stealth = 4
 
     elif dexterity >= 20:
-        acrobatics = 5
+        Acrobatics = 5
         SleightOfHand = 5
         Stealth = 5
         
@@ -634,48 +652,70 @@ def LevelConversion():
 
     if lvl == 1:
         cache = 2
-    if lvl == 2:
-        cache = 2
-    if lvl == 3:
-        cache = 2
-    if lvl == 4:
+
+    elif lvl == 2:
         cache = 2
 
-    if lvl == 5:
-        cache = 3
-    if lvl == 6:
-        cache = 3
-    if lvl == 7:
-        cache = 3
-    if lvl == 8:
+    elif lvl == 3:
+        cache = 2
+
+    elif lvl == 4:
+        cache = 2
+
+    elif lvl == 5:
         cache = 3
 
-    if lvl == 9:
-        cache = 4
-    if lvl == 10:
-        cache = 4
-    if lvl == 11:
-        cache = 4
-    if lvl == 12:
+    elif lvl == 6:
+        cache = 3
+
+    elif lvl == 7:
+        cache = 3
+
+    elif lvl == 8:
+        cache = 3
+
+    elif lvl == 9:
         cache = 4
 
-    if lvl == 13:
-        cache = 5
-    if lvl == 14:
-        cache = 5
-    if lvl == 15:
-        cache = 5
-    if lvl == 16:
+    elif lvl == 10:
+        cache = 4
+
+    elif lvl == 11:
+        cache = 4
+
+    elif lvl == 12:
+        cache = 4
+
+    elif lvl == 13:
         cache = 5
 
-    if lvl == 17:
+    elif lvl == 14:
+        cache = 5
+
+    elif lvl == 15:
+        cache = 5
+
+    elif lvl == 16:
+        cache = 5
+
+    elif lvl == 17:
         cache = 6
-    if lvl == 18:
+
+    elif lvl == 18:
         cache = 6
-    if lvl == 19:
+
+    elif lvl == 19:
         cache = 6
-    if lvl == 20:
+
+    elif lvl == 20:
         cache = 6
+
+    else:
+        Error()
+
+def Error():
+    print("There was an unknown error. Please try again")
+    quit()
 
 
 def CharacterCreation():
@@ -688,6 +728,7 @@ def CharacterCreation():
     global temp_wis2
     global temp_intelli2
     global temp_charisma2
+    global lvl
 
     name = str(input("Character name: "))
     temp_r = int(input("\nChoose a race\n 1 - Dragonborn\n 2 - Dwarf\n 3 - Elf\n 4 - Gnome\n 5 - Half-Elf\n 6 - Halfling\n 7 - Half-Orc\n 8 - Human\n 9 - Tiefling\n Type your answer: "))
@@ -713,6 +754,8 @@ def CharacterCreation():
 
     temp_charisma = rollDice()
     charisma = temp_charisma + temp_charisma2
+
+    LevelConversion()
 
     classTranslation()
 
