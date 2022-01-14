@@ -154,12 +154,12 @@ def classTranslation():
     if temp_c == 1:
         Class = "Barbarian"
         for i in range(2):
-            print("Because you've chosen Barbarian, you can increase 2 ability scores by 1.\n 1 for Animal Handling\n 2 for Athletics\n 3 for Intimidation\n 4 for Nature\n 5 for Perception\n 6 for Survival\n")
+            print("Because you've chosen Barbarian, you gain Proficency two of these skills.\n 1 for Animal Handling\n 2 for Athletics\n 3 for Intimidation\n 4 for Nature\n 5 for Perception\n 6 for Survival\n")
             option = int(input("Type your answer: "))
             if option == 1:
                 AnimalHandling += cache
             if option == 2:
-                athletics += cache
+                Athletics += cache
             if option == 3:
                 Intimidation += cache
             if option == 4:
@@ -173,6 +173,47 @@ def classTranslation():
 
     elif temp_c == 2:
         Class = "Bard"
+        for i in range(3):
+               print("Because you've chosen Bard, You gain proficency in three skills of your choice. \n 1 for Athletics\n 2 for Acrobatics\n 3 for Sleight of Hand\n 4 for Stealth\n 5 for Arcana\n 6 for History\n 7 for Investigation\n 8 for Nature\n 9 for Religion\n 10 for Animal Handling\n 11 for Insight\n 12 for Medicine\n 13 for Perception\n 14 for Survival\n 15 for Deception\n 16 for Intimidation\n 17 for Performance\n 18 for Persuasion\n")
+               option = int(input("Type your answer: "))
+               if option == 1:
+                   Athletics += cache
+               if option == 2:
+                   Acrobatics += cache
+               if option == 3:
+                   SleightOfHand += cache
+               if option == 4:
+                   Stealth += cache
+               if option == 5:
+                   Arcana += cache
+               if option == 6:
+                   History += cache
+               if option == 7:
+                   Investigation += cache
+               if option == 8:
+                   Nature += cache
+               if option == 9:
+                   Religion += cache
+               if option == 10:
+                   AnimalHandling += cache
+               if option == 11:
+                   Insight += cache
+               if option == 12:
+                   Medicine += cache
+               if option == 13:
+                   Perception += cache
+               if option == 14:
+                   Survival += cache
+               if option == 15:
+                   Deception += cache
+               if option == 16:
+                   Intimidation += cache
+               if option == 17:
+                   Performance += cache
+               if option == 18:
+                   Persuasion += cache
+               else:
+                   print("Error: Somethng went wrong")
         #edit the line below
         #edit the line below
         #edit the line below
@@ -181,7 +222,7 @@ def classTranslation():
         Class = "Cleric"
         for i in range(2):
             #edit the line below
-            print("Because you've chosen Cleric, you can increase 2 ability scores by 1.\n 1 for History\n 2 for Insight\n 3 for Medicine\n 4 for Persuasion\n 5 for Religion")
+            print("Because you've chosen Cleric, you gain proficency in two of these skills.\n 1 for History\n 2 for Insight\n 3 for Medicine\n 4 for Persuasion\n 5 for Religion\n")
             option = int(input("Type your answer: "))
             if option == 1:
                 History += cache
@@ -199,7 +240,7 @@ def classTranslation():
         Class = "Druid"
         for i in range(2):
             #edit the line below
-            print("Because you've chosen Druid, you can increase 2 ability scores by 1.\n 1 for Animal Handling\n 2 for Athletics\n 3 for Intimidation\n 4 for Nature\n 5 for Perception\n 6 for Survival\n")
+            print("Because you've chosen Druid, you gain proficency in two of these skills.\n 1 for Arcana\n 2 for Animal Handling\n 3 for Insight\n 4 for Medicine\n 5 for Nature\n 6 for Perception\n 7 for Religion\n 8 for Survival\n")
             option = int(input("Type your answer: "))
             if option == 1:
                 Arcana += cache
@@ -223,7 +264,7 @@ def classTranslation():
     elif temp_c == 5:
             Class = "Fighter"
             #not finished
-            print("Because you've chosen Fighter, you can increase 2 ability scores by 1.\n 1 for Acrobatics\n 2 for Animal Handling\n 3 for Athletics\n 4 for History\n 5 for Insight\n 6 for Intimidation\n 7 for Perception\n 8 for Survival\n")
+            print("Because you've chosen Fighter, you gain proficeny in two of these skills.\n 1 for Acrobatics\n 2 for Animal Handling\n 3 for Athletics\n 4 for History\n 5 for Insight\n 6 for Intimidation\n 7 for Perception\n 8 for Survival\n")
             option = int(input("Type your answer: "))
             if option == 1:
                 Arcana += cache
