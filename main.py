@@ -101,18 +101,20 @@ def raceTranslation():
         for i in range(2):
             print("Because you've chosen Half-Elf, you can increase 2 ability scores by 1.\n 1 for Strength\n 2 for Dexterity\n 3 for Constitution\n 4 for Wisdom\n 5 for Intelligence\n")
             option = int(input("Type your answer: "))
-            if option == 1:
+            if option == 0:
+                print("")
+            elif option == 1:
                 temp_str2 += 1
-            if option == 2:
+            elif option == 2:
                 temp_dex2 += 1
-            if option == 3:
+            elif option == 3:
                 temp_const2 += 1
-            if option == 4:
+            elif option == 4:
                 temp_wis2 += 1
-            if option == 5:
+            elif option == 5:
                 temp_intelli2 += 1
             else:
-                print("Error: Something went wrong")
+                print("Error: Something went wrong - 2")
 
     elif temp_r == 6:
         race = "Halfling"
@@ -175,9 +177,9 @@ def classTranslation():
                 print("Option is 0")
             elif option == 1:
                 AnimalHandling += cache
-            if option == 2:
+            elif option == 2:
                 Athletics += cache
-            if option == 3:
+            elif option == 3:
                 Intimidation += cache
             elif option == 4:
                 Nature += cache
@@ -195,45 +197,42 @@ def classTranslation():
                option = int(input("Type your answer: "))
                if option == 1:
                    Athletics += cache
-               if option == 2:
+               elif option == 2:
                    Acrobatics += cache
-               if option == 3:
+               elif option == 3:
                    SleightOfHand += cache
-               if option == 4:
+               elif option == 4:
                    Stealth += cache
-               if option == 5:
+               elif option == 5:
                    Arcana += cache
-               if option == 6:
+               elif option == 6:
                    History += cache
-               if option == 7:
+               elif option == 7:
                    Investigation += cache
-               if option == 8:
+               elif option == 8:
                    Nature += cache
-               if option == 9:
+               elif option == 9:
                    Religion += cache
-               if option == 10:
+               elif option == 10:
                    AnimalHandling += cache
-               if option == 11:
+               elif option == 11:
                    Insight += cache
-               if option == 12:
+               elif option == 12:
                    Medicine += cache
-               if option == 13:
+               elif option == 13:
                    Perception += cache
-               if option == 14:
+               elif option == 14:
                    Survival += cache
-               if option == 15:
+               elif option == 15:
                    Deception += cache
-               if option == 16:
+               elif option == 16:
                    Intimidation += cache
-               if option == 17:
+               elif option == 17:
                    Performance += cache
-               if option == 18:
+               elif option == 18:
                    Persuasion += cache
                else:
                    print("Error: Somethng went wrong")
-        #edit the line below
-        #edit the line below
-        #edit the line below
 
     elif temp_c == 3:
         Class = "Cleric"
@@ -243,13 +242,13 @@ def classTranslation():
             option = int(input("Type your answer: "))
             if option == 1:
                 History += cache
-            if option == 2:
+            elif option == 2:
                 Insight += cache
-            if option == 3:
+            elif option == 3:
                 Medicine += cache
-            if option == 4:
+            elif option == 4:
                 Persuasion += cache
-            if option == 5:
+            elif option == 5:
                 Religion += cache
             else:
                 print("Error: Something went wrong")
@@ -261,19 +260,19 @@ def classTranslation():
             option = int(input("Type your answer: "))
             if option == 1:
                 Arcana += cache
-            if option == 2:
+            elif option == 2:
                 AnimalHandling += cache
-            if option == 3:
+            elif option == 3:
                 Insight += cache
-            if option == 4:
+            elif option == 4:
                 Medicine += cache
-            if option == 5:
+            elif option == 5:
                 Nature += cache
-            if option == 6:
+            elif option == 6:
                 Perception += cache
-            if option == 7:
+            elif option == 7:
                 Religion += cache
-            if option == 8:
+            elif option == 8:
                 Survival += cache
             else:
                 print("Error: Something went wrong")
@@ -285,19 +284,19 @@ def classTranslation():
             option = int(input("Type your answer: "))
             if option == 1:
                 Arcana += cache
-            if option == 2:
+            elif option == 2:
                 AnimalHandling += cache
-            if option == 3:
+            elif option == 3:
                 Insight += cache
-            if option == 4:
+            elif option == 4:
                 Medicine += cache
-            if option == 5:
+            elif option == 5:
                 Nature += cache
-            if option == 6:
+            elif option == 6:
                 Perception += cache
-            if option == 7:
+            elif option == 7:
                 Religion += cache
-            if option == 8:
+            elif option == 8:
                 Survival += cache
             else:
                 print("Error: Something went wrong")
