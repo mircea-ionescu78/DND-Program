@@ -4,6 +4,7 @@ import os
 
 cache = 0
 
+#This is the function defining the main menu
 def Menu():
     print("D&D Sheet Builder\n 1 - Character creation\n 2 - Party Creation\n 3 - GM Viewer\n 4 - Quit\n")
     index = int(input("Enter the value: "))
@@ -15,7 +16,7 @@ def Menu():
         print("Incorrect answer. Try again")
         Menu()
 
-
+#This is the class defining the character template
 class Character:
 
     def __init__(self, name, race, Class, level, strength, dexterity, constitution, wisdom, intelligence, charisma):
@@ -30,7 +31,7 @@ class Character:
         self.Intelligence = intelligence
         self.Charisma = charisma
 
-
+#This is the function defines the different races and converts the user input to the race
 def raceTranslation():
     global race
     global temp_r
@@ -142,16 +143,18 @@ def raceTranslation():
     else:
         print("Something went wrong.")
 
-
+#This is the function defines the different classes and converts the user input to a class
 def classTranslation():
+    #The vriable temp_c is the temporary value which helps determine the class
+    #The varibale cache is used to cache the bonus for the skills
     global Class
     global temp_c
     global cache
+
     if temp_c == 1:
         Class = "Barbarian"
         for i in range(2):
-            #edit the line below
-            print("Because you've chosen Half-Elf, you can increase 2 ability scores by 1.\n 1 for Animal Handling\n 2 for Athletics\n 3 for Intimidation\n 4 for Nature\n 5 for Perception\n 6 for Survival\n")
+            print("Because you've chosen Barbarian, you can increase 2 ability scores by 1.\n 1 for Animal Handling\n 2 for Athletics\n 3 for Intimidation\n 4 for Nature\n 5 for Perception\n 6 for Survival\n")
             option = int(input("Type your answer: "))
             if option == 1:
                 AnimalHandling += cache
@@ -178,7 +181,7 @@ def classTranslation():
         Class = "Cleric"
         for i in range(2):
             #edit the line below
-            print("Because you've chosen Half-Elf, you can increase 2 ability scores by 1.\n 1 for History\n 2 for Insight\n 3 for Medicine\n 4 for Persuasion\n 5 for Religion")
+            print("Because you've chosen Cleric, you can increase 2 ability scores by 1.\n 1 for History\n 2 for Insight\n 3 for Medicine\n 4 for Persuasion\n 5 for Religion")
             option = int(input("Type your answer: "))
             if option == 1:
                 History += cache
@@ -196,7 +199,7 @@ def classTranslation():
         Class = "Druid"
         for i in range(2):
             #edit the line below
-            print("Because you've chosen Half-Elf, you can increase 2 ability scores by 1.\n 1 for Animal Handling\n 2 for Athletics\n 3 for Intimidation\n 4 for Nature\n 5 for Perception\n 6 for Survival\n")
+            print("Because you've chosen Druid, you can increase 2 ability scores by 1.\n 1 for Animal Handling\n 2 for Athletics\n 3 for Intimidation\n 4 for Nature\n 5 for Perception\n 6 for Survival\n")
             option = int(input("Type your answer: "))
             if option == 1:
                 Arcana += cache
@@ -218,9 +221,54 @@ def classTranslation():
                 print("Error: Something went wrong")
 
     elif temp_c == 5:
-        Class = "Fighter"
+            Class = "Fighter"
+            #not finished
+            print("Because you've chosen Fighter, you can increase 2 ability scores by 1.\n 1 for Acrobatics\n 2 for Animal Handling\n 3 for Athletics\n 4 for History\n 5 for Insight\n 6 for Intimidation\n 7 for Perception\n 8 for Survival\n")
+            option = int(input("Type your answer: "))
+            if option == 1:
+                Arcana += cache
+            if option == 2:
+                AnimalHandling += cache
+            if option == 3:
+                Insight += cache
+            if option == 4:
+                Medicine += cache
+            if option == 5:
+                Nature += cache
+            if option == 6:
+                Perception += cache
+            if option == 7:
+                Religion += cache
+            if option == 8:
+                Survival += cache
+            else:
+                print("Error: Something went wrong")
+
     elif temp_c == 6:
-        Class = "Monk"
+            Class = "Monk"
+            #not finished
+            print("Because you've chosen Druid, you can increase 2 ability scores by 1.\n 1 for Animal Handling\n 2 for Athletics\n 3 for Intimidation\n 4 for Nature\n 5 for Perception\n 6 for Survival\n")
+            option = int(input("Type your answer: "))
+            if option == 1:
+                Arcana += cache
+            if option == 2:
+                AnimalHandling += cache
+            if option == 3:
+                Insight += cache
+            if option == 4:
+                Medicine += cache
+            if option == 5:
+                Nature += cache
+            if option == 6:
+                Perception += cache
+            if option == 7:
+                Religion += cache
+            if option == 8:
+                Survival += cache
+            else:
+                print("Error: Something went wrong")
+
+
     elif temp_c == 7:
         Class = "Paladin"
     elif temp_c == 8:
