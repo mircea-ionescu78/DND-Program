@@ -13,6 +13,10 @@ Installation:
 
 
 Checklist:
-  ☑️ Complete the Character Creation process.
+
+
+  ☑️ Complete the Character Creation process.<br>
   ❌ Make the Party Creation tool.
+  
+  
   ❌ Make the Game Master Viewer.
