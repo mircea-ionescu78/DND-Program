@@ -1,11 +1,18 @@
 # DND-Program
 
-This program will allow the users to create DND characters and organise parties with a Game Master View.
+This program would allow the users to:
+  Create a character through the Character Creation tool
+  See the stats of a character through the Game Master Viewer
+  Organise a party through the Party Creation tool
 
-Further updates:
 
-  In order to load the characters, the program would dynamically create arrays for each character details.
-  
-  The program would have an UI created with tKinter.
-  
-  There would be a mode to organise a party.
+Installation:
+  In order to use the program, download the repository and unzip it. You will need to have Python 3.5 or later already installed on the machine.
+  After installing Python 3.5+ on a Windows machine, just run the run.bat to start the program.
+  Still working on a .sh file for Linux users.
+
+
+Checklist:
+  ☑️ Complete the Character Creation process.
+  ❌ Make the Party Creation tool.
+  ❌ Make the Game Master Viewer.
