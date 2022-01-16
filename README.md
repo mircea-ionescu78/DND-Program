@@ -1,5 +1,4 @@
 # DND-Program
-<hr>
 This program would allow the users to:<br>
   Create a character through the Character Creation tool<br>
   See the stats of a character through the Game Master Viewer<br>
