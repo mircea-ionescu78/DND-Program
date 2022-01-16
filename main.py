@@ -1,20 +1,38 @@
 import random
 from array import *
+import os
+import csv
 
 from bin.functions import *
 import config
 
 
+
+
 # This is the function defining the main menu
 def Menu():
-    print("\n ========================\nD&D Sheet Builder\n ========================\n 1 - Character creation\n 2 - Party Creation\n 3 - Game Master Viewer\n 4 - Quit\n")
+    print(
+"\n\n██████████   ██████   █████ ██████████      ███████████\n"                                                               
+"░░███░░░░███ ░░██████ ░░███ ░░███░░░░███    ░░███░░░░░███\n"                                                               
+"░███   ░░███ ░███░███ ░███  ░███   ░░███    ░███    ░███ ████████   ██████   ███████ ████████   ██████   █████████████\n"  
+"░███    ░███ ░███░░███░███  ░███    ░███    ░██████████ ░░███░░███ ███░░███ ███░░███░░███░░███ ░░░░░███ ░░███░░███░░███\n" 
+"░███    ░███ ░███ ░░██████  ░███    ░███    ░███░░░░░░   ░███ ░░░ ░███ ░███░███ ░███ ░███ ░░░   ███████  ░███ ░███ ░███\n"
+"░███    ███  ░███  ░░█████  ░███    ███     ░███         ░███     ░███ ░███░███ ░███ ░███      ███░░███  ░███ ░███ ░███\n"
+"██████████   █████  ░░█████ ██████████      █████        █████    ░░██████ ░░███████ █████    ░░████████ █████░███ █████\n"
+"░░░░░░░░░░   ░░░░░    ░░░░░ ░░░░░░░░░░      ░░░░░        ░░░░░      ░░░░░░   ░░░░░███░░░░░      ░░░░░░░░ ░░░░░ ░░░ ░░░░░\n" 
+"                                                                             ███ ░███                                   \n"
+"                                                                            ░░██████                                    \n"
+"                                                                             ░░░░░░                                      \n")
+    print("\n 1 - Character creation\n 2 - Party Creation\n 3 - Game Master Viewer\n 4 - Quit\n")
     index = int(input("Enter the value: "))
     if index == 0:
         print("\n")
     elif index == 1:
         CharacterCreation()
+    elif index == 2:
+        party_creation()
     elif index == 3:
-        CharacterCreation()
+        load_char()
     elif index == 4:
         quit()
     else:
@@ -62,9 +80,87 @@ class Character:
 
 # This function saves the character in the characters.txt
 def saveChar():
+    # Old system
     file = open("characters.txt", "a")
     save = str(char.name) + " , " + str(char.race) + " , " + str(char.Class) + " , " + str(char.level) + " , " + str(char.Strength) + " , " + str(char.Dexterity) + " , " + str(char.Constitution) + " , " + str(char.Wisdom) + " , " + str(char.Intelligence) + " , " + str(char.Charisma) + "\n"
     file.write(save)
+    # New system
+    file_name = os.path.join("characters/", f"{char.name}.csv")
+    file2 = open(file_name, 'a', newline='')
+    writer = csv.writer(file2, delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL)
+    writer.writerow([char.name])
+    writer.writerow([char.race])
+    writer.writerow([char.Class])
+    writer.writerow([char.level])
+    writer.writerow([char.Strength])
+    writer.writerow([char.Dexterity])
+    writer.writerow([char.Constitution])
+    writer.writerow([char.Wisdom])
+    writer.writerow([char.Intelligence])
+    writer.writerow([char.Charisma])
+    writer.writerow([char.Athletics])
+    writer.writerow([char.Acrobatics])
+    writer.writerow([char.SleightOfHand])
+    writer.writerow([char.Stealth])
+    writer.writerow([char.Arcana])
+    writer.writerow([char.History])
+    writer.writerow([char.Investigation])
+    writer.writerow([char.AnimalHandling])
+    writer.writerow([char.Intimidation])
+    writer.writerow([char.Nature])
+    writer.writerow([char.Religion])
+    writer.writerow([char.Perception])
+    writer.writerow([char.Survival])
+    writer.writerow([char.Insight])
+    writer.writerow([char.Medicine])
+    writer.writerow([char.Deception])
+    writer.writerow([char.Persuasion])
+    writer.writerow([char.Performance])
+
+
+def party_creation():
+    if len(os.listdir('characters')) == 0:
+        print("There needs to be a minimum of 1 character created to access this menu")
+        Menu()
+    else:
+        quit()
+
+
+def load_char():
+    char1 = []
+    print("\nIn order to load a character, you need to choose what character to import.")
+    option = str(input("Input the character name: "))
+    file_name = os.path.join("characters/", f"{option}.csv")
+    with open(file_name, newline='') as csvfile:
+        reader = csv.reader(csvfile, delimiter=',', quotechar='|')
+        for row in reader:
+            row = str(row)
+            char1.append(row)
+
+    print("Name: ", char1[0])
+    print("Race: ", char1[1])
+    print("Class: ", char1[2])
+    print("Level: ", char1[3])
+    print("========================")
+    print("Strength: ", char1[4])
+    print("Dexterity: ", char1[5])
+    print("Constitution: ", char1[6])
+    print("Wisdom: ", char1[7])
+    print("Intelligence: ", char1[8])
+    print("Charisma: ", char1[9])
+    print("========================")
+    see_more = str(input("Do you want to see more? y/n"))
+    if see_more == "y":
+        print("**Strength**")
+        print("Athletics: ", char1[10])
+        print("**Dexterity**")
+        print("Acrobatics: ", char1[11])
+        print("Sleight of Hand: ", char1[12])
+        print("Stealth: ", char1[13])
+        print("**Intelligence**")
+        print("Arcana: ", char1[8])
+        print("Charisma: ", char1[9])
+        print("========================")
 
 
 # This function defines the character creation process
