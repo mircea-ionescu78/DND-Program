@@ -11,12 +11,9 @@ Installation:
   After installing Python 3.5+ on a Windows machine, just run the run.bat to start the program.
   Still working on a .sh file for Linux users.
 
-
+<hr>
 Checklist:
-
-
+<br>
   ☑️ Complete the Character Creation process.<br>
-  ❌ Make the Party Creation tool.
-  
-  
-  ❌ Make the Game Master Viewer.
+  ❌ Make the Party Creation tool.<br>
+  ❌ Make the Game Master Viewer.<br>
