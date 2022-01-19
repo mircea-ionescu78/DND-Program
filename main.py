@@ -119,11 +119,36 @@ def saveChar():
 
 
 def party_creation():
-    if len(os.listdir('characters')) == 0:
+    characters = len(os.listdir('characters'))
+    if characters == 0:
         print("There needs to be a minimum of 1 character created to access this menu")
         Menu()
     else:
-        quit()
+        party_name = str(input("Name the party: "))
+        print(f"{characters} available characters in the folder")
+        party_size = int(input("How many members are in the party? - "))
+
+        if party_size > 6:
+            Error()
+        else:
+            party_char1 = str(input("Enter the character name: "))
+            party_char2 = str(input("Enter the character name: "))
+            party_char3 = str(input("Enter the character name: "))
+            party_char4 = str(input("Enter the character name: "))
+            party_char5 = str(input("Enter the character name: "))
+            if party_char1 == "":
+                Error()
+            elif party_char2 == "":
+                print("Cannot make a party of only one member")
+                Error()
+            elif party_char3 == '' and party_char4 == '' and party_char5 == '':
+                print("Party made only with 2 characters")
+            elif party_char4 == '' and party_char5 == '':
+                print("Party made only with 3 characters")
+            elif party_char4 != "" and party_char5 == '':
+                print("Party made only with 4 characters")
+            else:
+                print("Party made with 5 characters")
 
 
 def load_char():

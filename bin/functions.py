@@ -130,7 +130,8 @@ def classTranslation():
     if config.temp_c == 1:
         config.Class = "Barbarian"
         for i in range(2):
-            print("Because you've chosen Barbarian, you gain Proficency two of these skills.\n 1 for Animal Handling\n 2 for Athletics\n 3 for Intimidation\n 4 for Nature\n 5 for Perception\n 6 for Survival\n")
+            print("Because you've chosen Barbarian, you gain proficiency two of these skills.\n"
+                  " 1 for Animal Handling\n 2 for Athletics\n 3 for Intimidation\n 4 for Nature\n 5 for Perception\n 6 for Survival\n")
             option = int(input("Type your answer: "))
             if option == 0:
                 print("Option is 0")
@@ -152,7 +153,11 @@ def classTranslation():
     elif config.temp_c == 2:
         config.Class = "Bard"
         for i in range(3):
-               print("Because you've chosen Bard, You gain proficency in three skills of your choice. \n 1 for Athletics\n 2 for Acrobatics\n 3 for Sleight of Hand\n 4 for Stealth\n 5 for Arcana\n 6 for History\n 7 for Investigation\n 8 for Nature\n 9 for Religion\n 10 for Animal Handling\n 11 for Insight\n 12 for Medicine\n 13 for Perception\n 14 for Survival\n 15 for Deception\n 16 for Intimidation\n 17 for Performance\n 18 for Persuasion\n")
+               print("Because you've chosen Bard, You gain proficiency in three skills of your choice. \n"
+                     " 1 for Athletics\n 2 for Acrobatics\n 3 for Sleight of Hand\n 4 for Stealth\n"
+                     " 5 for Arcana\n 6 for History\n 7 for Investigation\n 8 for Nature\n 9 for Religion\n"
+                     " 10 for Animal Handling\n 11 for Insight\n 12 for Medicine\n 13 for Perception\n 14 for Survival\n"
+                     " 15 for Deception\n 16 for Intimidation\n 17 for Performance\n 18 for Persuasion\n")
                option = int(input("Type your answer: "))
                if option == 1:
                    config.Athletics += config.cache
@@ -192,12 +197,13 @@ def classTranslation():
                    config.Persuasion += config.cache
                else:
                    print("Error: Somethng went wrong")
+                   Error()
 
     elif config.temp_c == 3:
         config.Class = "Cleric"
         for i in range(2):
-            #edit the line below
-            print("Because you've chosen Cleric, you gain proficency in two of these skills.\n 1 for History\n 2 for Insight\n 3 for Medicine\n 4 for Persuasion\n 5 for Religion\n")
+            print("Because you've chosen Cleric, you gain proficiency in two of these skills.\n"
+                  " 1 for History\n 2 for Insight\n 3 for Medicine\n 4 for Persuasion\n 5 for Religion\n")
             option = int(input("Type your answer: "))
             if option == 1:
                 config.History += config.cache
@@ -211,11 +217,19 @@ def classTranslation():
                 config.Religion += config.cache
             else:
                 print("Error: Something went wrong")
+
     elif config.temp_c == 4:
         config.Class = "Druid"
         for i in range(2):
-            #edit the line below
-            print("Because you've chosen Druid, you gain proficency in two of these skills.\n 1 for Arcana\n 2 for Animal Handling\n 3 for Insight\n 4 for Medicine\n 5 for Nature\n 6 for Perception\n 7 for Religion\n 8 for Survival\n")
+            print("Because you've chosen Druid, you gain proficiency in two of these skills.\n"
+                  " 1 for Arcana\n"
+                  " 2 for Animal Handling\n"
+                  " 3 for Insight\n"
+                  " 4 for Medicine\n"
+                  " 5 for Nature\n"
+                  " 6 for Perception\n"
+                  " 7 for Religion\n"
+                  " 8 for Survival\n")
             option = int(input("Type your answer: "))
             if option == 1:
                 config.Arcana += config.cache
@@ -235,74 +249,216 @@ def classTranslation():
                 config.Survival += config.cache
             else:
                 print("Error: Something went wrong")
+                Error()
 
     elif config.temp_c == 5:
-            config.Class = "Fighter"
-            #not finished
-            print("Because you've chosen Fighter, you gain proficeny in two of these skills.\n 1 for Acrobatics\n 2 for Animal Handling\n 3 for Athletics\n 4 for History\n 5 for Insight\n 6 for Intimidation\n 7 for Perception\n 8 for Survival\n")
+        config.Class = "Fighter"
+        for i in range(2):
+            print("Because you've chosen Fighter, you gain proficiency in two of these skills.\n"
+                      " 1 for Acrobatics\n 2 for Animal Handling\n 3 for Athletics\n 4 for History\n"
+                      " 5 for Insight\n 6 for Intimidation\n 7 for Perception\n 8 for Survival\n")
             option = int(input("Type your answer: "))
             if option == 1:
-                config.Arcana += config.cache
+                config.Acrobatics += config.cache
             elif option == 2:
                 config.AnimalHandling += config.cache
             elif option == 3:
-                config.Insight += config.cache
+                config.Athletics += config.cache
             elif option == 4:
-                config.Medicine += config.cache
+                config.History += config.cache
             elif option == 5:
-                config.Nature += config.cache
+                config.Insight += config.cache
             elif option == 6:
-                config.Perception += config.cache
+                config.Intimidation += config.cache
             elif option == 7:
-                config.Religion += config.cache
+                config.Perception += config.cache
             elif option == 8:
                 config.Survival += config.cache
             else:
                 print("Error: Something went wrong")
+                Error()
 
     elif config.temp_c == 6:
-            config.Class = "Monk"
-            #not finished
-            print("Because you've chosen Druid, you can increase 2 ability scores by 1.\n 1 for Animal Handling\n 2 for Athletics\n 3 for Intimidation\n 4 for Nature\n 5 for Perception\n 6 for Survival\n")
+        config.Class = "Monk"
+        for i in range(2):
+            print("Because you've chosen Druid, you can increase two ability scores by 1.\n"
+                  " 1 for Animal Handling\n 2 for Athletics\n 3 for Intimidation\n"
+                  " 4 for Nature\n 5 for Perception\n 6 for Survival\n")
             option = int(input("Type your answer: "))
             if option == 1:
-                config.Arcana += config.cache
-            elif option == 2:
                 config.AnimalHandling += config.cache
+            elif option == 2:
+                config.Athletics += config.cache
             elif option == 3:
-                config.Insight += config.cache
+                config.Intimidation += config.cache
             elif option == 4:
-                config.Medicine += config.cache
-            elif option == 5:
                 config.Nature += config.cache
-            elif option == 6:
+            elif option == 5:
                 config.Perception += config.cache
-            elif option == 7:
-                config.Religion += config.cache
-            elif option == 8:
+            elif option == 6:
                 config.Survival += config.cache
             else:
                 print("Error: Something went wrong")
+                Error()
 
     elif config.temp_c == 7:
         config.Class = "Paladin"
+        for i in range(2):
+            print("Because you've chosen Paladin, you can increase two ability scores by 1.\n"
+                  " 1 for Athletics\n 2 for Insight\n 3 for Intimidation\n"
+                  " 4 for Medicine\n 5 for Persuasion\n 6 for Religion\n")
+            option = int(input("Type your answer: "))
+            if option == 1:
+                config.Athletics += config.cache
+            elif option == 2:
+                config.Insight += config.cache
+            elif option == 3:
+                config.Intimidation += config.cache
+            elif option == 4:
+                config.Medicine += config.cache
+            elif option == 5:
+                config.Persuasion += config.cache
+            elif option == 6:
+                config.Religion += config.cache
+            else:
+                print("Error: Something went wrong")
+                Error()
 
     elif config.temp_c == 8:
         config.Class = "Ranger"
+        for i in range(3):
+            print("Because you've chosen Ranger, you can increase three ability scores by 1.\n"
+                  " 1 for Animal Handling\n 2 for Athletics\n 3 for Insight\n"
+                  " 4 for Investigation\n 5 for Nature\n 6 for Perception\n 7 for Stealth\n 8 for Survival\n")
+            option = int(input("Type your answer: "))
+            if option == 1:
+                config.AnimalHandling += config.cache
+            elif option == 2:
+                config.Athletics += config.cache
+            elif option == 3:
+                config.Insight += config.cache
+            elif option == 4:
+                config.Investigation += config.cache
+            elif option == 5:
+                config.Nature += config.cache
+            elif option == 6:
+                config.Perception += config.cache
+            elif option == 7:
+                config.Stealth += config.cache
+            elif option == 8:
+                config.Survival += config.cache
+            else:
+                print("Error: Something went wrong")
+                Error()
 
     elif config.temp_c == 9:
         config.Class = "Rogue"
+        for i in range(4):
+            print("Because you've chosen Rogue, you can increase four ability scores by 1.\n"
+                  " 1 for Acrobatics\n 2 for Athletics\n 3 for Insight\n"
+                  " 4 for Investigation\n 5 for Deception\n 6 for Intimidation\n 7 for Stealth\n 8 for Perception\n"
+                  " 9 for Performance\n 10 for Persuasion\n  11 for Sleight of Hand\n")
+            option = int(input("Type your answer: "))
+            if option == 1:
+                config.Acrobatics += config.cache
+            elif option == 2:
+                config.Athletics += config.cache
+            elif option == 3:
+                config.Insight += config.cache
+            elif option == 4:
+                config.Investigation += config.cache
+            elif option == 5:
+                config.Deception += config.cache
+            elif option == 6:
+                config.Intimidation += config.cache
+            elif option == 7:
+                config.Stealth += config.cache
+            elif option == 8:
+                config.Perception += config.cache
+            elif option == 9:
+                config.Performance += config.cache
+            elif option == 10:
+                config.Persuasion += config.cache
+            elif option == 11:
+                config.SleightOfHand += config.cache
+            else:
+                print("Error: Something went wrong")
+                Error()
 
     elif config.temp_c == 10:
         config.Class = "Sorcerer"
+        for i in range(2):
+            print("Because you've chosen Sorcerer, you gain proficiency two of these skills.\n"
+                  " 1 for Arcana\n 2 for Deception\n 3 for Insight\n"
+                  " 4 for Intimidation\n 5 for Persuasion\n 6 for Religion\n")
+            option = int(input("Type your answer: "))
+            if option == 1:
+                config.Arcana += config.cache
+            elif option == 2:
+                config.Deception += config.cache
+            elif option == 3:
+                config.Insight += config.cache
+            elif option == 4:
+                config.Intimidation += config.cache
+            elif option == 5:
+                config.Persuasion += config.cache
+            elif option == 6:
+                config.Religion += config.cache
+            else:
+                print("Error: Something went wrong")
+                Error()
 
     elif config.temp_c == 11:
         config.Class = "Warlock"
+        for i in range(2):
+            print("Because you've chosen Warlock, you gain proficiency two of these skills.\n"
+                  " 1 for Arcana\n 2 for Deception\n 3 for History\n"
+                  " 4 for Intimidation\n 5 for Investigation\n 6 for Nature\n 7 for Religion\n")
+            option = int(input("Type your answer: "))
+            if option == 1:
+                config.Arcana += config.cache
+            elif option == 2:
+                config.Deception += config.cache
+            elif option == 3:
+                config.History += config.cache
+            elif option == 4:
+                config.Intimidation += config.cache
+            elif option == 5:
+                config.Investigation += config.cache
+            elif option == 6:
+                config.Nature += config.cache
+            elif option == 7:
+                config.Religion += config.cache
+            else:
+                print("Error: Something went wrong")
+                Error()
 
     elif config.temp_c == 12:
         config.Class = "Wizard"
+        for i in range(2):
+            print("Because you've chosen Wizard, you gain proficiency two of these skills.\n"
+                  " 1 for Arcana\n 2 for Insight\n 3 for History\n"
+                  " 4 for Medicine\n 5 for Investigation\n 6 for Religion\n")
+            option = int(input("Type your answer: "))
+            if option == 1:
+                config.Arcana += config.cache
+            elif option == 2:
+                config.Insight += config.cache
+            elif option == 3:
+                config.History += config.cache
+            elif option == 4:
+                config.Medicine += config.cache
+            elif option == 5:
+                config.Investigation += config.cache
+            elif option == 6:
+                config.Religion += config.cache
+            else:
+                print("Error: Something went wrong")
+                Error()
+
     else:
         print("Something went wrong.")
+        Error()
 
 # This function converts the level into the ability points needed
 def LevelConversion():
