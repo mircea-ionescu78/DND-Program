@@ -46,11 +46,12 @@ class Character:
     def __init__(self, name, race, Class, level, strength, dexterity, constitution, wisdom,
                  intelligence, charisma, Athletics, Acrobatics, SleightOfHand, Stealth, Arcana, History,
                  Investigation, AnimalHandling, Intimidation, Nature, Religion, Perception, Survival,
-                 Insight, Medicine, Deception, Persuasion, Performance):
+                 Insight, Medicine, Deception, Persuasion, Performance, HP):
         self.name = name
         self.race = race
         self.Class = Class
         self.level = level
+        self.HP = HP
         self.Strength = strength
         self.Dexterity = dexterity
         self.Constitution = constitution
@@ -81,9 +82,9 @@ class Character:
 # This function saves the character in the characters.txt
 def saveChar():
     # Old system
-    file = open("characters.txt", "a")
-    save = str(char.name) + " , " + str(char.race) + " , " + str(char.Class) + " , " + str(char.level) + " , " + str(char.Strength) + " , " + str(char.Dexterity) + " , " + str(char.Constitution) + " , " + str(char.Wisdom) + " , " + str(char.Intelligence) + " , " + str(char.Charisma) + "\n"
-    file.write(save)
+    #file = open("characters.txt", "a")
+    #save = str(char.name) + " , " + str(char.race) + " , " + str(char.Class) + " , " + str(char.level) + " , " + str(char.Strength) + " , " + str(char.Dexterity) + " , " + str(char.Constitution) + " , " + str(char.Wisdom) + " , " + str(char.Intelligence) + " , " + str(char.Charisma) + "\n"
+    #file.write(save)
     # New system
     file_name = os.path.join("characters/", f"{char.name}.csv")
     file2 = open(file_name, 'a', newline='')
@@ -116,6 +117,7 @@ def saveChar():
     writer.writerow([char.Deception])
     writer.writerow([char.Persuasion])
     writer.writerow([char.Performance])
+    writer.writerow([char.HP])
 
 
 def party_creation():
@@ -249,16 +251,17 @@ def CharacterCreation():
     WisdomConversion()
     IntelligenceConversion()
     DexterityConversion()
-
+    HPconversion()
     classTranslation()
 
     char = Character(config.name, config.race, config.Class, config.lvl, config.strength, config.dexterity, config.constitution, config.wisdom, config.intelligence,
                      config.charisma, config.Athletics, config.Acrobatics, config.SleightOfHand, config.Stealth, config.Arcana, config.History, config.Investigation,
                      config.AnimalHandling, config.Intimidation, config.Nature, config.Religion, config.Perception, config.Survival, config.Insight, config.Medicine,
-                     config.Deception, config.Persuasion, config.Performance)
+                     config.Deception, config.Persuasion, config.Performance, config.hp)
 
     saveChar()
 
+    print("Character successfully created! It got saved in the characters folder")
     Menu()
 
 

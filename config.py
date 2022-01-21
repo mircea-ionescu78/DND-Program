@@ -3,7 +3,9 @@ name = ""
 temp_r = 0
 temp_c = 0
 lvl = 0
+hp = 0
 cache = 0
+constitutionMod = 0
 
 # Second section of data - temporary stats
 temp_str2 = 0

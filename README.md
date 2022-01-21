@@ -15,5 +15,5 @@ Installation:
 Checklist:
 <br>
   ☑️ Complete the Character Creation process.<br>
-  ❌ Make the Party Creation tool.<br>
-  ❌ Make the Game Master Viewer.<br>
+  ❌ Make the Party Creation tool. (Work in Progress)<br>
+  ❌ Make the Game Master Viewer. (Work in Progress)<br>
