@@ -82,6 +82,7 @@ def raceTranslation():
                 config.temp_intelli2 += 1
             else:
                 print("Error: Something went wrong")
+                Error()
 
     elif config.temp_r == 6:
         config.race = "Halfling"
@@ -121,6 +122,7 @@ def raceTranslation():
 
     else:
         print("Something went wrong.")
+        Error()
 
 
 # This is the function defines the different classes and converts the user input to a class
@@ -563,6 +565,8 @@ def StrengthConversion():
     elif config.strength >= 20:
         config.Athletics += 5
 
+    else:
+        Error()
 
 # This function converts the ability points into skill points for Charisma
 def CharismaConversion():
@@ -632,6 +636,9 @@ def CharismaConversion():
         config.Intimidation += 5
         config.Performance += 5
         config.Persuasion += 5
+
+    else:
+        Error()
 
 
 # This function converts the ability points into skill points for Wisdom
@@ -713,6 +720,9 @@ def WisdomConversion():
         config.Perception = 5
         config.Survival = 5
 
+    else:
+        Error()
+
 
 # This function converts the ability points into skill points for Dexterity
 def DexterityConversion():
@@ -776,6 +786,9 @@ def DexterityConversion():
         config.Acrobatics = 5
         config.SleightOfHand = 5
         config.Stealth = 5
+
+    else:
+        Error()
 
 
 # This function converts the ability points into skill points for Intelligence
@@ -858,6 +871,9 @@ def IntelligenceConversion():
         config.Nature = 5
         config.Religion = 5
 
+    else:
+        Error()
+
 
 # This function converts the ability points into a modifier
 def ConstitutionConversion():
@@ -894,6 +910,9 @@ def ConstitutionConversion():
 
     elif config.constitution >= 20:
         config.constitutionMod += 5
+
+    else:
+        Error()
 
 
 # This function calculates the HP
@@ -963,6 +982,7 @@ def HPconversion():
 
     else:
         Error()
+
 
 # This function defines what the program will do in case of an error or unexpected case
 def Error():

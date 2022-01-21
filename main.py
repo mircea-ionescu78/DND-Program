@@ -2,11 +2,8 @@ import random
 from array import *
 import os
 import csv
-
 from bin.functions import *
 import config
-
-
 
 
 # This is the function defining the main menu
@@ -79,7 +76,7 @@ class Character:
         self.Performance = Performance
 
 
-# This function saves the character in the characters.txt
+# This function saves the character
 def saveChar():
     # Old system
     #file = open("characters.txt", "a")
@@ -120,6 +117,7 @@ def saveChar():
     writer.writerow([char.HP])
 
 
+# This function creates the party
 def party_creation():
     characters = len(os.listdir('characters'))
     if characters == 0:
@@ -153,6 +151,7 @@ def party_creation():
                 print("Party made with 5 characters")
 
 
+# This function loads the character from the folder and adds info to the party
 def load_char():
     char1 = []
     print("\nIn order to load a character, you need to choose what character to import.")
