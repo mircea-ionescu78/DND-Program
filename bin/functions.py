@@ -859,6 +859,111 @@ def IntelligenceConversion():
         config.Religion = 5
 
 
+# This function converts the ability points into a modifier
+def ConstitutionConversion():
+
+    if config.constitution == 1:
+        config.constitutionMod += -5
+
+    elif config.constitution == 2 or config.constitution == 3:
+        config.constitutionMod += -4
+
+    elif config.constitution == 4 or config.constitution == 5:
+        config.constitutionMod += -3
+
+    elif config.constitution == 6 or config.constitution == 7:
+        config.constitutionMod += -2
+
+    elif config.constitution == 8 or config.constitution == 9:
+        config.constitutionMod += -1
+
+    elif config.constitution == 10 or config.constitution == 11:
+        config.constitutionMod += 0
+
+    elif config.constitution == 12 or config.constitution == 13:
+        config.constitutionMod += 1
+
+    elif config.constitution == 14 or config.constitution == 15:
+        config.constitutionMod += 2
+
+    elif config.constitution == 16 or config.constitution == 17:
+        config.constitutionMod += 3
+
+    elif config.constitution == 18 or config.constitution == 19:
+        config.constitutionMod += 4
+
+    elif config.constitution >= 20:
+        config.constitutionMod += 5
+
+
+# This function calculates the HP
+def HPconversion():
+
+    ConstitutionConversion()
+
+    if config.temp_r == 1:
+        # Barbarian
+        dice = random.randint(1, 12)
+        config.hp = (dice * config.lvl) + (config.constitutionMod * config.lvl)
+
+    elif config.temp_r == 2:
+        # Bard
+        dice = random.randint(1, 8)
+        config.hp = (dice * config.lvl) + (config.constitutionMod * config.lvl)
+
+    elif config.temp_r == 3:
+        # Cleric
+        dice = random.randint(1, 8)
+        config.hp = (dice * config.lvl) + (config.constitutionMod * config.lvl)
+
+    elif config.temp_r == 4:
+        # Druid
+        dice = random.randint(1, 8)
+        config.hp = (dice * config.lvl) + (config.constitutionMod * config.lvl)
+
+    elif config.temp_r == 5:
+        # Fighter
+        dice = random.randint(1, 10)
+        config.hp = (dice * config.lvl) + (config.constitutionMod * config.lvl)
+
+    elif config.temp_r == 6:
+        # Monk
+        dice = random.randint(1, 8)
+        config.hp = (dice * config.lvl) + (config.constitutionMod * config.lvl)
+
+    elif config.temp_r == 7:
+        # Paladin
+        dice = random.randint(1, 10)
+        config.hp = (dice * config.lvl) + (config.constitutionMod * config.lvl)
+
+    elif config.temp_r == 8:
+        # Ranger
+        dice = random.randint(1, 10)
+        config.hp = (dice * config.lvl) + (config.constitutionMod * config.lvl)
+
+    elif config.temp_r == 9:
+        # Rogue
+        dice = random.randint(1, 8)
+        config.hp = (dice * config.lvl) + (config.constitution * config.lvl)
+
+    elif config.temp_r == 10:
+        # Sorcerer
+        dice = random.randint(1, 6)
+        config.hp = (dice * config.lvl) + (config.constitution * config.lvl)
+
+    elif config.temp_r == 11:
+        # Warlock
+        dice = random.randint(1, 8)
+        config.hp = (dice * config.lvl) + (config.constitution * config.lvl)
+
+    elif config.temp_r == 12:
+        # Wizard
+        dice = random.randint(1, 6)
+        config.hp = (dice * config.lvl) + (config.constitution * config.lvl)
+
+    else:
+        Error()
+
 # This function defines what the program will do in case of an error or unexpected case
 def Error():
     print("There was an unknown error. Please try again")
