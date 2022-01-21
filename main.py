@@ -2,11 +2,8 @@ import random
 from array import *
 import os
 import csv
-
 from bin.functions import *
 import config
-
-
 
 
 # This is the function defining the main menu
@@ -46,7 +43,7 @@ class Character:
     def __init__(self, name, race, Class, level, strength, dexterity, constitution, wisdom,
                  intelligence, charisma, Athletics, Acrobatics, SleightOfHand, Stealth, Arcana, History,
                  Investigation, AnimalHandling, Intimidation, Nature, Religion, Perception, Survival,
-                 Insight, Medicine, Deception, Persuasion, Performance, HP):
+                 Insight, Medicine, Deception, Persuasion, Performance, HP, ST_S, ST_Ch, ST_Co, ST_In, ST_Wi, ST_De):
         self.name = name
         self.race = race
         self.Class = Class
@@ -78,8 +75,15 @@ class Character:
         self.Persuasion = Persuasion
         self.Performance = Performance
 
+        self.ST_S = ST_S
+        self.ST_Ch = ST_Ch
+        self.ST_Co = ST_Co
+        self.ST_In = ST_In
+        self.ST_Wi = ST_Wi
+        self.ST_De = ST_De
 
-# This function saves the character in the characters.txt
+
+# This function saves the character
 def saveChar():
     # Old system
     #file = open("characters.txt", "a")
@@ -118,8 +122,15 @@ def saveChar():
     writer.writerow([char.Persuasion])
     writer.writerow([char.Performance])
     writer.writerow([char.HP])
+    writer.writerow([char.ST_S])
+    writer.writerow([char.ST_Co])
+    writer.writerow([char.ST_Ch])
+    writer.writerow([char.ST_Wi])
+    writer.writerow([char.ST_In])
+    writer.writerow([char.ST_De])
 
 
+# This function creates the party
 def party_creation():
     characters = len(os.listdir('characters'))
     if characters == 0:
@@ -153,6 +164,7 @@ def party_creation():
                 print("Party made with 5 characters")
 
 
+# This function loads the character from the folder and adds info to the party
 def load_char():
     char1 = []
     print("\nIn order to load a character, you need to choose what character to import.")
@@ -257,7 +269,8 @@ def CharacterCreation():
     char = Character(config.name, config.race, config.Class, config.lvl, config.strength, config.dexterity, config.constitution, config.wisdom, config.intelligence,
                      config.charisma, config.Athletics, config.Acrobatics, config.SleightOfHand, config.Stealth, config.Arcana, config.History, config.Investigation,
                      config.AnimalHandling, config.Intimidation, config.Nature, config.Religion, config.Perception, config.Survival, config.Insight, config.Medicine,
-                     config.Deception, config.Persuasion, config.Performance, config.hp)
+                     config.Deception, config.Persuasion, config.Performance, config.hp, config.ST_strength, config.ST_charisma, config.ST_constitution,
+                     config.ST_intelligence, config.ST_wisdom, config.ST_dexterity)
 
     saveChar()
 

@@ -6,6 +6,11 @@ lvl = 0
 hp = 0
 cache = 0
 constitutionMod = 0
+strengthMod = 0
+charismaMod = 0
+wisdomMod = 0
+dexterityMod = 0
+IntelliMod = 0
 
 # Second section of data - temporary stats
 temp_str2 = 0
@@ -44,3 +49,11 @@ Medicine = 0
 Deception = 0
 Persuasion = 0
 Performance = 0
+
+# Fifth section of data - Saving Throws
+ST_strength = 0
+ST_dexterity = 0
+ST_constitution = 0
+ST_wisdom = 0
+ST_intelligence = 0
+ST_charisma = 0
