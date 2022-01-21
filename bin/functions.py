@@ -462,6 +462,7 @@ def classTranslation():
         print("Something went wrong.")
         Error()
 
+
 # This function converts the level into the ability points needed
 def LevelConversion():
 
@@ -534,39 +535,51 @@ def StrengthConversion():
 
     if config.strength == 1:
         config.Athletics += -5
+        config.strengthMod = -5
 
     elif config.strength == 2 or config.strength == 3:
         config.Athletics += -4
+        config.strengthMod = -4
 
     elif config.strength == 4 or config.strength == 5:
         config.Athletics += -3
+        config.strengthMod = -3
 
     elif config.strength == 6 or config.strength == 7:
         config.Athletics += -2
+        config.strengthMod = -2
 
     elif config.strength == 8 or config.strength == 9:
         config.Athletics += -1
+        config.strengthMod = -1
 
     elif config.strength == 10 or config.strength == 11:
         config.Athletics += 0
+        config.strengthMod = 0
 
     elif config.strength == 12 or config.strength == 13:
         config.Athletics += 1
+        config.strengthMod = 1
 
     elif config.strength == 14 or config.strength == 15:
         config.Athletics += 2
+        config.strengthMod = 2
 
     elif config.strength == 16 or config.strength == 17:
         config.Athletics += 3
+        config.strengthMod = 3
 
     elif config.strength == 18 or config.strength == 19:
         config.Athletics += 4
+        config.strengthMod = 4
 
     elif config.strength >= 20:
         config.Athletics += 5
+        config.strengthMod = 5
 
     else:
         Error()
+
 
 # This function converts the ability points into skill points for Charisma
 def CharismaConversion():
@@ -576,66 +589,77 @@ def CharismaConversion():
         config.Intimidation += -5
         config.Performance += -5
         config.Persuasion += -5
+        config.charismaMod = -5
 
     elif config.charisma == 2 or config.charisma == 3:
         config.Deception += -4
         config.Intimidation += -4
         config.Performance += -4
         config.Persuasion += -4
+        config.charismaMod = -4
 
     elif config.charisma == 4 or config.charisma == 5:
         config.Deception += -3
         config.Intimidation += -3
         config.Performance += -3
         config.Persuasion += -3
+        config.charismaMod = -3
 
     elif config.charisma == 6 or config.charisma == 7:
         config.Deception += -2
         config.Intimidation += -2
         config.Performance += -2
         config.Persuasion += -2
+        config.charismaMod = -2
 
     elif config.charisma == 8 or config.charisma == 9:
         config.Deception += -1
         config.Intimidation += -1
         config.Performance += -1
         config.Persuasion += -1
+        config.charismaMod = -1
 
     elif config.charisma == 10 or config.charisma == 11:
         config.Deception += 0
         config.Intimidation += 0
         config.Performance += 0
         config.Persuasion += 0
+        config.charismaMod = 0
 
     elif config.charisma == 12 or config.charisma == 13:
         config.Deception += 1
         config.Intimidation += 1
         config.Performance += 1
         config.Persuasion += 1
+        config.charismaMod = 1
 
     elif config.charisma == 14 or config.charisma == 15:
         config.Deception += 2
         config.Intimidation += 2
         config.Performance += 2
         config.Persuasion += 2
+        config.charismaMod = 2
 
     elif config.charisma == 16 or config.charisma == 17:
         config.Deception += 3
         config.Intimidation += 3
         config.Performance += 3
         config.Persuasion += 3
+        config.charismaMod = 3
 
     elif config.charisma == 18 or config.charisma == 19:
         config.Deception += 4
         config.Intimidation += 4
         config.Performance += 4
         config.Persuasion += 4
+        config.charismaMod = 4
 
     elif config.charisma >= 20:
         config.Deception += 5
         config.Intimidation += 5
         config.Performance += 5
         config.Persuasion += 5
+        config.charismaMod = 5
 
     else:
         Error()
@@ -649,6 +673,7 @@ def WisdomConversion():
         config.Medicine = -5
         config.Perception = -5
         config.Survival = -5
+        config.wisdomMod = -5
 
     elif config.wisdom == 2 or config.wisdom == 3:
         config.AnimalHandling = -4
@@ -656,6 +681,7 @@ def WisdomConversion():
         config.Medicine = -4
         config.Perception = -4
         config.Survival = -4
+        config.wisdomMod = -4
 
     elif config.wisdom == 4 or config.wisdom == 5:
         config.AnimalHandling = -3
@@ -663,6 +689,7 @@ def WisdomConversion():
         config.Medicine = -3
         config.Perception = -3
         config.Survival = -3
+        config.wisdomMod = -3
 
     elif config.wisdom == 6 or config.wisdom == 7:
         config.AnimalHandling = -2
@@ -670,6 +697,7 @@ def WisdomConversion():
         config.Medicine = -2
         config.Perception = -2
         config.Survival = -2
+        config.wisdomMod = -2
 
     elif config.wisdom == 8 or config.wisdom == 9:
         config.AnimalHandling = -1
@@ -677,6 +705,7 @@ def WisdomConversion():
         config.Medicine = -1
         config.Perception = -1
         config.Survival = -1
+        config.wisdomMod = -1
 
     elif config.wisdom == 10 or config.wisdom == 11:
         config.AnimalHandling = 0
@@ -684,6 +713,7 @@ def WisdomConversion():
         config.Medicine = 0
         config.Perception = 0
         config.Survival = 0
+        config.wisdomMod = 0
 
     elif config.wisdom == 12 or config.wisdom == 13:
         config.AnimalHandling = 1
@@ -691,6 +721,7 @@ def WisdomConversion():
         config.Medicine = 1
         config.Perception = 1
         config.Survival = 1
+        config.wisdomMod = 1
 
     elif config.wisdom == 14 or config.wisdom == 15:
         config.AnimalHandling = 2
@@ -698,6 +729,7 @@ def WisdomConversion():
         config.Medicine = 2
         config.Perception = 2
         config.Survival = 2
+        config.wisdomMod = 2
 
     elif config.wisdom == 16 or config.wisdom == 17:
         config.AnimalHandling = 3
@@ -705,6 +737,7 @@ def WisdomConversion():
         config.Medicine = 3
         config.Perception = 3
         config.Survival = 3
+        config.wisdomMod = 3
 
     elif config.wisdom == 18 or config.wisdom == 19:
         config.AnimalHandling = 4
@@ -712,6 +745,7 @@ def WisdomConversion():
         config.Medicine = 4
         config.Perception = 4
         config.Survival = 4
+        config.wisdomMod = 4
 
     elif config.wisdom >= 20:
         config.AnimalHandling = 5
@@ -719,6 +753,7 @@ def WisdomConversion():
         config.Medicine = 5
         config.Perception = 5
         config.Survival = 5
+        config.wisdomMod = 5
 
     else:
         Error()
@@ -736,56 +771,67 @@ def DexterityConversion():
         config.Acrobatics = -5
         config.SleightOfHand = -5
         config.Stealth = -5
+        config.dexterityMod = -5
 
     elif config.dexterity == 2 or config.dexterity == 3:
         config.Acrobatics = -4
         config.SleightOfHand = -4
         config.Stealth = -4
+        config.dexterityMod = -4
 
     elif config.dexterity == 4 or config.dexterity == 5:
         config.Acrobatics = -3
         config.SleightOfHand = -3
         config.Stealth = -3
+        config.dexterityMod = -3
 
     elif config.dexterity == 6 or config.dexterity == 7:
         config.Acrobatics = -2
         config.SleightOfHand = -2
         config.Stealth = -2
+        config.dexterityMod = -2
 
     elif config.dexterity == 8 or config.dexterity == 9:
         config.Acrobatics = -1
         config.SleightOfHand = -1
         config.Stealth = -1
+        config.dexterityMod = -1
 
     elif config.dexterity == 10 or config.dexterity == 11:
         config.Acrobatics = 0
         config.SleightOfHand = 0
         config.Stealth = 0
+        config.dexterityMod = 0
 
     elif config.dexterity == 12 or config.dexterity == 13:
         config.Acrobatics = 1
         config.SleightOfHand = 1
         config.Stealth = 1
+        config.dexterityMod = 1
 
     elif config.dexterity == 14 or config.dexterity == 15:
         config.Acrobatics = 2
         config.SleightOfHand = 2
         config.Stealth = 2
+        config.dexterityMod = 2
 
     elif config.dexterity == 16 or config.dexterity == 17:
         config.Acrobatics = 3
         config.SleightOfHand = 3
         config.Stealth = 3
+        config.dexterityMod = 3
 
     elif config.dexterity == 18 or config.dexterity == 19:
         config.Acrobatics = 4
         config.SleightOfHand = 4
         config.Stealth = 4
+        config.dexterityMod = 4
 
     elif config.dexterity >= 20:
         config.Acrobatics = 5
         config.SleightOfHand = 5
         config.Stealth = 5
+        config.dexterityMod = 5
 
     else:
         Error()
@@ -800,6 +846,7 @@ def IntelligenceConversion():
         config.Investigation = -5
         config.Nature = -5
         config.Religion = -5
+        config.IntelliMod = -5
 
     elif config.intelligence == 2 or config.intelligence == 3:
         config.Arcana = -4
@@ -807,6 +854,7 @@ def IntelligenceConversion():
         config.Investigation = -4
         config.Nature = -4
         config.Religion = -4
+        config.IntelliMod = -4
 
     elif config.intelligence == 4 or config.intelligence == 5:
         config.Arcana = -3
@@ -814,6 +862,7 @@ def IntelligenceConversion():
         config.Investigation = -3
         config.Nature = -3
         config.Religion = -3
+        config.IntelliMod = -3
 
     elif config.intelligence == 6 or config.intelligence == 7:
         config.Arcana = -2
@@ -821,6 +870,7 @@ def IntelligenceConversion():
         config.Investigation = -2
         config.Nature = -2
         config.Religion = -2
+        config.IntelliMod = -2
 
     elif config.intelligence == 8 or config.intelligence == 9:
         config.Arcana = -1
@@ -828,6 +878,7 @@ def IntelligenceConversion():
         config.Investigation = -1
         config.Nature = -1
         config.Religion = -1
+        config.IntelliMod = -1
 
     elif config.intelligence == 10 or config.intelligence == 11:
         config.Arcana = 0
@@ -835,6 +886,7 @@ def IntelligenceConversion():
         config.Investigation = 0
         config.Nature = 0
         config.Religion = 0
+        config.IntelliMod = 0
 
     elif config.intelligence == 12 or config.intelligence == 13:
         config.Arcana = 1
@@ -842,6 +894,7 @@ def IntelligenceConversion():
         config.Investigation = 1
         config.Nature = 1
         config.Religion = 1
+        config.IntelliMod = 1
 
     elif config.intelligence == 14 or config.intelligence == 15:
         config.Arcana = 2
@@ -849,6 +902,7 @@ def IntelligenceConversion():
         config.Investigation = 2
         config.Nature = 2
         config.Religion = 2
+        config.IntelliMod = 2
 
     elif config.intelligence == 16 or config.intelligence == 17:
         config.Arcana = 3
@@ -856,6 +910,7 @@ def IntelligenceConversion():
         config.Investigation = 3
         config.Nature = 3
         config.Religion = 3
+        config.IntelliMod = 3
 
     elif config.intelligence == 18 or config.intelligence == 19:
         config.Arcana = 4
@@ -863,6 +918,7 @@ def IntelligenceConversion():
         config.Investigation = 4
         config.Nature = 4
         config.Religion = 4
+        config.IntelliMod = 4
 
     elif config.intelligence >= 20:
         config.Arcana = 5
@@ -870,6 +926,7 @@ def IntelligenceConversion():
         config.Investigation = 5
         config.Nature = 5
         config.Religion = 5
+        config.IntelliMod = 5
 
     else:
         Error()
@@ -983,6 +1040,120 @@ def HPconversion():
     else:
         Error()
 
+
+#This function calculates the saving throws
+def SavingThrows():
+    if config.temp_r == 1:
+        # Barbarian
+        config.ST_strength = config.strengthMod + config.cache
+        config.ST_constitution = config.constitutionMod + config.cache
+        config.ST_charisma = config.charismaMod
+        config.ST_wisdom = config.wisdomMod
+        config.ST_dexterity = config.dexterityMod
+        config.ST_intelligence = config.IntelliMod
+
+
+    elif config.temp_r == 2:
+        # Bard
+        config.ST_strength = config.strengthMod
+        config.ST_constitution = config.constitutionMod
+        config.ST_charisma = config.charismaMod + config.cache
+        config.ST_wisdom = config.wisdomMod
+        config.ST_dexterity = config.dexterityMod + config.cache
+        config.ST_intelligence = config.IntelliMod
+
+    elif config.temp_r == 3:
+        # Cleric
+        config.ST_strength = config.strengthMod
+        config.ST_constitution = config.constitutionMod
+        config.ST_charisma = config.charismaMod + config.cache
+        config.ST_wisdom = config.wisdomMod + config.cache
+        config.ST_dexterity = config.dexterityMod
+        config.ST_intelligence = config.IntelliMod
+
+    elif config.temp_r == 4:
+        # Druid
+        config.ST_strength = config.strengthMod
+        config.ST_constitution = config.constitutionMod
+        config.ST_charisma = config.charismaMod
+        config.ST_wisdom = config.wisdomMod + config.cache
+        config.ST_dexterity = config.dexterityMod
+        config.ST_intelligence = config.IntelliMod + config.cache
+
+    elif config.temp_r == 5:
+        # Fighter
+        config.ST_strength = config.strengthMod + config.cache
+        config.ST_constitution = config.constitutionMod + config.cache
+        config.ST_charisma = config.charismaMod
+        config.ST_wisdom = config.wisdomMod
+        config.ST_dexterity = config.dexterityMod
+        config.ST_intelligence = config.IntelliMod
+
+    elif config.temp_r == 6:
+        # Monk
+        config.ST_strength = config.strengthMod + config.cache
+        config.ST_constitution = config.constitutionMod
+        config.ST_charisma = config.charismaMod
+        config.ST_wisdom = config.wisdomMod
+        config.ST_dexterity = config.dexterityMod + config.cache
+        config.ST_intelligence = config.IntelliMod
+
+    elif config.temp_r == 7:
+        # Paladin
+        config.ST_strength = config.strengthMod
+        config.ST_constitution = config.constitutionMod
+        config.ST_charisma = config.charismaMod + config.cache
+        config.ST_wisdom = config.wisdomMod + config.cache
+        config.ST_dexterity = config.dexterityMod
+        config.ST_intelligence = config.IntelliMod
+
+    elif config.temp_r == 8:
+        # Ranger
+        config.ST_strength = config.strengthMod + config.cache
+        config.ST_constitution = config.constitutionMod
+        config.ST_charisma = config.charismaMod
+        config.ST_wisdom = config.wisdomMod
+        config.ST_dexterity = config.dexterityMod + config.cache
+        config.ST_intelligence = config.IntelliMod
+
+    elif config.temp_r == 9:
+        # Rogue
+        config.ST_strength = config.strengthMod
+        config.ST_constitution = config.constitutionMod
+        config.ST_charisma = config.charismaMod
+        config.ST_wisdom = config.wisdomMod
+        config.ST_dexterity = config.dexterityMod + config.cache
+        config.ST_intelligence = config.IntelliMod + config.cache
+
+    elif config.temp_r == 10:
+        # Sorcerer
+        config.ST_strength = config.strengthMod
+        config.ST_constitution = config.constitutionMod + config.cache
+        config.ST_charisma = config.charismaMod + config.cache
+        config.ST_wisdom = config.wisdomMod
+        config.ST_dexterity = config.dexterityMod
+        config.ST_intelligence = config.IntelliMod
+
+    elif config.temp_r == 11:
+        # Warlock
+        config.ST_strength = config.strengthMod
+        config.ST_constitution = config.constitutionMod
+        config.ST_charisma = config.charismaMod + config.cache
+        config.ST_wisdom = config.wisdomMod + config.cache
+        config.ST_dexterity = config.dexterityMod
+        config.ST_intelligence = config.IntelliMod
+
+    elif config.temp_r == 12:
+        # Wizard
+        config.ST_strength = config.strengthMod
+        config.ST_constitution = config.constitutionMod
+        config.ST_charisma = config.charismaMod
+        config.ST_wisdom = config.wisdomMod + config.cache
+        config.ST_dexterity = config.dexterityMod
+        config.ST_intelligence = config.IntelliMod + config.cache
+
+    else:
+        Error()
 
 # This function defines what the program will do in case of an error or unexpected case
 def Error():

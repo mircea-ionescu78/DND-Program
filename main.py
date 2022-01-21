@@ -43,7 +43,7 @@ class Character:
     def __init__(self, name, race, Class, level, strength, dexterity, constitution, wisdom,
                  intelligence, charisma, Athletics, Acrobatics, SleightOfHand, Stealth, Arcana, History,
                  Investigation, AnimalHandling, Intimidation, Nature, Religion, Perception, Survival,
-                 Insight, Medicine, Deception, Persuasion, Performance, HP):
+                 Insight, Medicine, Deception, Persuasion, Performance, HP, ST_S, ST_Ch, ST_Co, ST_In, ST_Wi, ST_De):
         self.name = name
         self.race = race
         self.Class = Class
@@ -74,6 +74,13 @@ class Character:
         self.Deception = Deception
         self.Persuasion = Persuasion
         self.Performance = Performance
+
+        self.ST_S = ST_S
+        self.ST_Ch = ST_Ch
+        self.ST_Co = ST_Co
+        self.ST_In = ST_In
+        self.ST_Wi = ST_Wi
+        self.ST_De = ST_De
 
 
 # This function saves the character
@@ -115,6 +122,12 @@ def saveChar():
     writer.writerow([char.Persuasion])
     writer.writerow([char.Performance])
     writer.writerow([char.HP])
+    writer.writerow([char.ST_S])
+    writer.writerow([char.ST_Co])
+    writer.writerow([char.ST_Ch])
+    writer.writerow([char.ST_Wi])
+    writer.writerow([char.ST_In])
+    writer.writerow([char.ST_De])
 
 
 # This function creates the party
@@ -256,7 +269,8 @@ def CharacterCreation():
     char = Character(config.name, config.race, config.Class, config.lvl, config.strength, config.dexterity, config.constitution, config.wisdom, config.intelligence,
                      config.charisma, config.Athletics, config.Acrobatics, config.SleightOfHand, config.Stealth, config.Arcana, config.History, config.Investigation,
                      config.AnimalHandling, config.Intimidation, config.Nature, config.Religion, config.Perception, config.Survival, config.Insight, config.Medicine,
-                     config.Deception, config.Persuasion, config.Performance, config.hp)
+                     config.Deception, config.Persuasion, config.Performance, config.hp, config.ST_strength, config.ST_charisma, config.ST_constitution,
+                     config.ST_intelligence, config.ST_wisdom, config.ST_dexterity)
 
     saveChar()
 
