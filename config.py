@@ -50,10 +50,11 @@ Deception = 0
 Persuasion = 0
 Performance = 0
 
-# Fifth section of data - Saving Throws
+# Fifth section of data - Saving Throws and the specials
 ST_strength = 0
 ST_dexterity = 0
 ST_constitution = 0
 ST_wisdom = 0
 ST_intelligence = 0
 ST_charisma = 0
+darkvision = "No"

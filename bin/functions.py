@@ -28,6 +28,7 @@ def raceTranslation():
         config.temp_wis2 = 0
         config.temp_intelli2 = 0
         config.temp_charisma2 = 1
+        
 
     elif config.temp_r == 2:
         config.race = "Dwarf"
@@ -37,6 +38,7 @@ def raceTranslation():
         config.temp_wis2 = 0
         config.temp_intelli2 = 0
         config.temp_charisma2 = 0
+        config.darkvision = "Yes"
 
     elif config.temp_r == 3:
         config.race = "Elf"
@@ -46,6 +48,7 @@ def raceTranslation():
         config.temp_wis2 = 0
         config.temp_intelli2 = 0
         config.temp_charisma2 = 0
+        config.darkvision = "Yes"
 
     elif config.temp_r == 4:
         config.race = "Gnome"
@@ -55,6 +58,7 @@ def raceTranslation():
         config.temp_wis2 = 0
         config.temp_intelli2 = 2
         config.temp_charisma2 = 0
+        config.darkvision = "Yes"
 
     elif config.temp_r == 5:
         config.race = "Half-Elf"
@@ -64,6 +68,7 @@ def raceTranslation():
         config.temp_wis2 = 0
         config.temp_intelli2 = 0
         config.temp_charisma2 = 2
+        config.darkvision = "Yes"
 
         for i in range(2):
             print("Because you've chosen Half-Elf, you can increase 2 ability scores by 1.\n 1 for Strength\n 2 for Dexterity\n 3 for Constitution\n 4 for Wisdom\n 5 for Intelligence\n")
@@ -101,6 +106,7 @@ def raceTranslation():
         config.temp_wis2 = 0
         config.temp_intelli2 = 0
         config.temp_charisma2 = 0
+        config.darkvision = "Yes"
 
     elif config.temp_r == 8:
         config.race = "Human"
@@ -119,6 +125,7 @@ def raceTranslation():
         config.temp_wis2 = 0
         config.temp_intelli2 = 1
         config.temp_charisma2 = 2
+        config.darkvision = "Yes"
 
     else:
         print("Something went wrong.")

@@ -43,7 +43,8 @@ class Character:
     def __init__(self, name, race, Class, level, strength, dexterity, constitution, wisdom,
                  intelligence, charisma, Athletics, Acrobatics, SleightOfHand, Stealth, Arcana, History,
                  Investigation, AnimalHandling, Intimidation, Nature, Religion, Perception, Survival,
-                 Insight, Medicine, Deception, Persuasion, Performance, HP, ST_S, ST_Ch, ST_Co, ST_In, ST_Wi, ST_De):
+                 Insight, Medicine, Deception, Persuasion, Performance, HP, ST_S, ST_Ch, ST_Co, ST_In, ST_Wi, ST_De,
+                 Darkvision):
         self.name = name
         self.race = race
         self.Class = Class
@@ -81,6 +82,7 @@ class Character:
         self.ST_In = ST_In
         self.ST_Wi = ST_Wi
         self.ST_De = ST_De
+        self.Darkvision = Darkvision
 
 
 # This function saves the character
@@ -128,6 +130,7 @@ def saveChar():
     writer.writerow([char.ST_Wi])
     writer.writerow([char.ST_In])
     writer.writerow([char.ST_De])
+    writer.writerow([char.Darkvision])
 
 
 # This function creates the party
@@ -270,7 +273,7 @@ def CharacterCreation():
                      config.charisma, config.Athletics, config.Acrobatics, config.SleightOfHand, config.Stealth, config.Arcana, config.History, config.Investigation,
                      config.AnimalHandling, config.Intimidation, config.Nature, config.Religion, config.Perception, config.Survival, config.Insight, config.Medicine,
                      config.Deception, config.Persuasion, config.Performance, config.hp, config.ST_strength, config.ST_charisma, config.ST_constitution,
-                     config.ST_intelligence, config.ST_wisdom, config.ST_dexterity)
+                     config.ST_intelligence, config.ST_wisdom, config.ST_dexterity,config.darkvision)
 
     saveChar()
 
