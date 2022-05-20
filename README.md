@@ -17,3 +17,6 @@ Checklist:
   ☑️ Complete the Character Creation process.<br>
   ❌ Make the Party Creation tool. (Work in Progress)<br>
   ❌ Make the Game Master Viewer. (Work in Progress)<br>
+
+<br>
+This project has been paused indefinitely.
